@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {BASE_URL} from '../constraints/index.js'
+import CakeCard from './CakeCard.js'
 
 export default function CakeContainer() {
 
@@ -11,15 +12,14 @@ export default function CakeContainer() {
             .then(json => setCakes(json))
     }, [])
 
-    useEffect(() => {
-        console.log("Cakes: ")
-        console.log(cakes)
-    }, [cakes])
+    function populateCakes() {
+        return cakes.map(cake => <CakeCard cake={cake} />)
+    }
 
 
     return(
         <div>
-
+            {cakes && populateCakes()}
         </div>
     )
 
