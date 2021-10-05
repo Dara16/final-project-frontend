@@ -13,7 +13,7 @@ export default function CakeContainer() {
     }, [])
 
     function populateCakes() {
-        return cakes.map(cake => <CakeCard cake={cake} />)
+        return cakes.map(cake => <CakeCard cake={cake} key={cake.id} />)
     }
 
 
