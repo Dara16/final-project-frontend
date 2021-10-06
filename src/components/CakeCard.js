@@ -2,16 +2,17 @@ import React, {useState} from 'react';
 import { Rating } from 'react-simple-star-rating'
 
 export default function CakeCard({cake}) {
-        const [rating, setRating] = useState(0) // initial rating value
+        const [rating, setRating] = useState(0) 
       
-        // Catch Rating value
+        
         const handleRating = (rate) => {
           setRating(rate)
-          // Some logic
+        
         }
 
     return (
         <div className='Cake-card'>
+            <h2>Cakes</h2>
             <h3>{cake.name}</h3>
             <img src={cake.image} width="400" height="350" />
             <p>${cake.price}</p>            
@@ -28,7 +29,7 @@ export default function CakeCard({cake}) {
             <option value="Large">Large</option>
           </select>
         </div>
-            <Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
+            <Rating onClick={handleRating} ratingValue={rating} />
             
             <br />
             

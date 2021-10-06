@@ -19,6 +19,7 @@ export default function CustomerContainer() {
 
     return(
         <div>
+            <h2>Customer List</h2>
             {customers && populateCustomers()}
         </div>
     )
