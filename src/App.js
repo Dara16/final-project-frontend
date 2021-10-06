@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import CakeContainer from './components/CakeContainer';
 import CustomerContainer from './components/CustomerContainer';
 import HomePage from './components/HomePage';
+import CustomerDetails from './components/CustomerDetails';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>    
           <Route exact path="/customers">
             <CustomerContainer />
+          </Route>
+          <Route path="/customers/:id">
+            <CustomerDetails />
           </Route>
         </Switch>  
     </div>
