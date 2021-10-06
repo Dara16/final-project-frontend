@@ -8,6 +8,8 @@ export default function Customer({customer}) {
             <Link to={`/customers/${customer.id}`}>
                 <h3>{customer.name}</h3>
             </Link>
+                <p>{customer.address}</p>
+                <p>{customer.phone_number}</p>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../constraints'
 import Customer from './Customer'
+import CustomerForm from './CustomerForm'
 
 export default function CustomerContainer() {
 
@@ -13,12 +14,27 @@ export default function CustomerContainer() {
     }, [])
 
     function populateCustomers() {
-        return customers.map(customer => <Customer customer={customer} key={customer.id} />)
+        return customers.map(customer => <Customer customer={customer} createCustomer={createCustomer} key={customer.id} />)
     }
 
+    function createCustomer(customer) {
+ 
+        fetch(BASE_URL + "/customers", {
+            method: "POST",
+            body: JSON.stringify(customer),
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        })
+        .then((res) => res.json())
+        .then((json) => setCustomers([...customers, json]))
+    } 
 
     return(
         <div>
+            <h2>Add New Customer</h2>
+            <CustomerForm createCustomer={createCustomer} />
             <h2>Customer List</h2>
             {customers && populateCustomers()}
         </div>
