@@ -19,9 +19,9 @@ export default function CustomerForm({createCustomer}) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input name="name" value={customer.name} onChange={handleChange} />
-                <input name="address" value={customer.address} onChange={handleChange} />
-                <input name="phone-number" value={customer.phone_number} onChange={handleChange} />
+                <input name="name" value={customer.name} onChange={handleChange} placeholder="name"/>
+                <input name="address" value={customer.address} onChange={handleChange} placeholder="address"/>
+                <input name="phone-number" value={customer.phone_number} onChange={handleChange} placeholder="phone number"/>
                 <button type="submit">Add Customer</button>
             </form>
 

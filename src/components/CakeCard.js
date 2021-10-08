@@ -28,6 +28,7 @@ export default function CakeCard({cake}) {
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
           </select>
+          <button>Update Size</button>
         </div>
             <Rating onClick={handleRating} ratingValue={rating} />
             
