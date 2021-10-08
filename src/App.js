@@ -6,6 +6,7 @@ import CakeContainer from './components/CakeContainer';
 import CustomerContainer from './components/CustomerContainer';
 import HomePage from './components/HomePage';
 import CustomerDetails from './components/CustomerDetails';
+import OrderContainer from './components/OrderContainer';
 
 function App() {
   return (
@@ -25,9 +26,16 @@ function App() {
           <Route exact path="/customers">
             <CustomerContainer />
           </Route>
+          <Route exact path="/orders">
+            <OrderContainer />
+          </Route>
           <Route path="/customers/:id">
             <CustomerDetails />
           </Route>
+          <Route path="/orders/:id">
+            
+          </Route>
+          
         </Switch>  
     </div>
   </Router>
