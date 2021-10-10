@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../constraints'
 import Order from './Order'
+//import OrderForm from './OrderForm'
 
 export default function OrderContainer() {
 
     const [orders, setOrders] = useState(null)
+
 
     useEffect(() => {
         fetch(BASE_URL + 'orders')
@@ -12,10 +14,9 @@ export default function OrderContainer() {
             .then(json => setOrders(json))
     }, [])
 
-
-    function populateOrders() {
-        return orders.map(order => <Order order={order} deleteOrder={deleteOrder} key={order.id}/>)
-    }
+   function populateOrders() {
+    return orders.map(order => <Order order={order} deleteOrder={deleteOrder} />)
+   }
 
     function deleteOrder(order) {
         fetch(BASE_URL + 'orders/' + order.id, {
@@ -27,8 +28,8 @@ export default function OrderContainer() {
          
     return (
         <div>
-            <h2>Orders List</h2>
-            {orders && populateOrders()}
+           <h2>Order List</h2>
+           {orders && populateOrders()}
         </div>
     )
 }

@@ -1,23 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Order({order, deleteOrder}) {
+export default function Order({order, onSelectOrder, deleteOrder}) {
+    const { date, order_number, completed } = order
+
+    
     return (
-        <div className='order-show'>
         
             <tr>
-                <td>{order.date}</td>
+                <td>{date}</td>
                 <Link to={`/orders/${order.id}`}>
-                <td>{order.order_number}</td>
+                <td>{order_number}</td>
                 </Link>
-                <td>{order.completed ? "Yes" : "No"}</td>
+                <td>{completed ? "Yes" : "No"}</td>
                 <td>
-                <button onClick={() => deleteOrder(order)}>Delete Order</button>
+               {/* <button type="button" className="btn btn-primary" onClick={handleClick}>Edit Order</button> */}
+                <button className="btn btn-primary" onClick={() => deleteOrder(order)}>Delete Order</button>
                 </td>
             </tr>
 
             
             
-        </div>
+
     )
 }
