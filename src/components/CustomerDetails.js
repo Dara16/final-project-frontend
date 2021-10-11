@@ -25,17 +25,24 @@ export default function CustomerDetails() {
                     <h2>{customer.name}</h2>
                     <p>{customer.address}</p>
                     <p>{customer.phone_number}</p>
-                    
+                
                     <h3>Orders</h3>
-                    {customer.orders.map((order) => (
-                        <Order order={order} />
-                    ))}
-                    
-
-                    
-                
-                
+                    <table className="table table-striped">                            
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col">Order No.</th>
+                                <th scope="col">completed</th>
+                            </tr>
+                        </thead>    
+                        <tbody>
+                            {customer.orders.map((order) => (
+                            <Order order={order} />
+                            ))}
+                        </tbody>
+                    </table>
                 </>
+                
             )}
         </div>
     )

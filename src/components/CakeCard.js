@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Rating } from 'react-simple-star-rating'
 
-export default function CakeCard({ cake }) {
+export default function CakeCard({ cake, onAddToCart }) {
         const [rating, setRating] = useState(0) 
         const { name, image, price, description, size } = cake
         
@@ -13,7 +13,7 @@ export default function CakeCard({ cake }) {
            
 
     return (
-        <div className='Cake-card'>
+        <div className='row'>
             <h2>Cakes</h2>
             <h3>{name}</h3>
             <img src={image} width="400" height="350" alt=""/>
@@ -33,11 +33,13 @@ export default function CakeCard({ cake }) {
           <button type="button" className="btn btn-primary">
             Update Size
           </button>
+          <button className="btn btn-primary" onClick={() => onAddToCart(cake)}>
+            Add To Cart
+          </button>
         </div>
-            <Rating onClick={handleRating} ratingValue={rating} />
-            
-            <br />
-            
+            <Rating onClick={handleRating} ratingValue={rating} />           
         </div>
+        
+
     )
 }

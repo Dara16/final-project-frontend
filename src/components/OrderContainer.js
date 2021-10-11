@@ -28,8 +28,18 @@ export default function OrderContainer() {
          
     return (
         <div>
-           <h2>Order List</h2>
-           {orders && populateOrders()}
+           <h2>Order List</h2> 
+            <table className="table table-striped">                            
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Order No.</th>
+                        <th scope="col">completed</th>
+                    </tr>
+                </thead>
+                <tbody>{orders && populateOrders()}</tbody>
+            
+            </table>
         </div>
     )
 }
