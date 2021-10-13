@@ -50,6 +50,7 @@ export default function CakeContainer() {
               <div className="row">
               <div className="col-1">
                 <h2>Cakes</h2>
+                <br />
                 {cakes && populateCakes()}
               </div>
               </div>
