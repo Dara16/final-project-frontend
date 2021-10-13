@@ -32,9 +32,11 @@ export default function CustomerContainer() {
     } 
 
     return(
-        <div>
+        <div className="customer-list">
+            <br />
             <h2>Add New Customer</h2>
             <CustomerForm createCustomer={createCustomer} />
+            <br />
             <h2>Customer List</h2>
             {customers && populateCustomers()}
         </div>

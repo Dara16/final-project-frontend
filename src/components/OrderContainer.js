@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../constraints'
 import Order from './Order'
-//import OrderForm from './OrderForm'
 
 export default function OrderContainer() {
-
-    const [orders, setOrders] = useState(null)
-
+    const [orders, setOrders] = useState([])
+    const [selectedOrder, setSelectedOrder] = useState(null)
 
     useEffect(() => {
         fetch(BASE_URL + 'orders')
@@ -14,9 +12,27 @@ export default function OrderContainer() {
             .then(json => setOrders(json))
     }, [])
 
-   function populateOrders() {
-    return orders.map(order => <Order order={order} deleteOrder={deleteOrder} />)
-   }
+    function populateOrders() {
+        return orders.map(order => <Order order={order} updateOrder={updateOrder} deleteOrder={deleteOrder}/>)
+    }
+
+    function updateOrder(order) {
+        fetch(BASE_URL + 'orders/' + order.id, {
+            method : "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(order),
+        })
+        .then((res) => res.json())
+        const newOrders = orders.map((ord) => {
+            if (ord.id === order.id) {
+                ord = order
+            }
+            return ord
+        })
+        setOrders(newOrders)
+    }
 
     function deleteOrder(order) {
         fetch(BASE_URL + 'orders/' + order.id, {
@@ -24,12 +40,12 @@ export default function OrderContainer() {
         })
         const newOrders = orders.filter(ord => ord.id !== order.id)
         setOrders(newOrders)
-    }
-         
+    }  
+
     return (
-        <div>
-           <h2>Order List</h2> 
-            <table className="table table-striped">                            
+        <>
+           <h2>Order List</h2>
+           <table class="table">                            
                 <thead>
                     <tr>
                         <th scope="col">Date</th>
@@ -39,7 +55,7 @@ export default function OrderContainer() {
                 </thead>
                 <tbody>{orders && populateOrders()}</tbody>
             
-            </table>
-        </div>
+        </table> 
+        </>
     )
 }

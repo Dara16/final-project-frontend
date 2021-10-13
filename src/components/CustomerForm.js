@@ -21,7 +21,8 @@ export default function CustomerForm({createCustomer}) {
             <form onSubmit={handleSubmit}>
                 <input name="name" value={customer.name} onChange={handleChange} placeholder="name"/>
                 <input name="address" value={customer.address} onChange={handleChange} placeholder="address"/>
-                <input name="phone-number" value={customer.phone_number} onChange={handleChange} placeholder="phone number"/>
+                <input id="phone_number" name="phone_number" type="tel"
+                placeholder="phone number" size="20" value={customer.phone_number} onChange={handleChange} />
                 <button type="submit">Add Customer</button>
             </form>
 

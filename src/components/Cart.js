@@ -6,7 +6,7 @@ export default function Cart({cartItems, onAddToCart, onRemove }) {
     const totalAmount = itemsPrice + taxAmount
 
     return (
-        <aside className="cart">
+        <aside className="block col-1">
             <h2>Shopping Cart</h2>
             <div>
                 {cartItems.length === 0 && <div>Cart is empty</div>}
@@ -32,17 +32,17 @@ export default function Cart({cartItems, onAddToCart, onRemove }) {
           <>
             <hr></hr>
             <div className="row">
-              <div className="col-2">Items Price</div>
+              <div className="col-2">Item(s) Price</div>
               <div className="col-1 text-right">${(itemsPrice/100).toFixed(2)}</div>
             </div>
             <div className="row">
-              <div className="col-2">Tax Price</div>
+              <div className="col-2">Tax Amount</div>
               <div className="col-1 text-right">${(taxAmount/100).toFixed(2)}</div>
             </div>
 
             <div className="row">
               <div className="col-2">
-                <strong>Total Price</strong>
+                <strong>Total Amount</strong>
               </div>
               <div className="col-1 text-right">
                 <strong>${(totalAmount/100).toFixed(2)}</strong>
@@ -50,7 +50,7 @@ export default function Cart({cartItems, onAddToCart, onRemove }) {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
+              <button onClick={() => alert('Checkout Successful!')}>
                 Checkout
               </button>
             </div>

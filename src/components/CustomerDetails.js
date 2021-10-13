@@ -22,12 +22,12 @@ export default function CustomerDetails() {
         <div>
             {customer && (
                 <>
-                    <h2>{customer.name}</h2>
+                    <h3>{customer.name}</h3>
                     <p>{customer.address}</p>
                     <p>{customer.phone_number}</p>
                 
                     <h3>Orders</h3>
-                    <table className="table table-striped">                            
+                    <table className="table">                            
                         <thead>
                             <tr>
                                 <th scope="col">Date</th>
