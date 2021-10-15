@@ -33,10 +33,6 @@ a {
   margin: auto;
 }
 
-p {
-  color: #404040;
-}
-
 .row {
   display: flex;
   justify-content: space-between;

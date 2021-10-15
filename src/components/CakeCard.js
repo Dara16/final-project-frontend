@@ -3,7 +3,7 @@ import { Rating } from 'react-simple-star-rating'
 
 export default function CakeCard({ cake, onAddToCart }) {
         const [rating, setRating] = useState(0) 
-        const { name, image, price, description, size } = cake
+        const { name, image, price, description } = cake
         
         const handleRating = (rate) => {
           setRating(rate)

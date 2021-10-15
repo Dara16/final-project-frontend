@@ -7,6 +7,7 @@ import CustomerContainer from './components/CustomerContainer';
 import HomePage from './components/HomePage';
 import CustomerDetails from './components/CustomerDetails';
 import OrderContainer from './components/OrderContainer';
+import OrderDetails from './components/OrderDetails';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
             <CustomerDetails />
           </Route>
           <Route path="/orders/:id">
-            
+            <OrderDetails />
           </Route>
           
         </Switch>  

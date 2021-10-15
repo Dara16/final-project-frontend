@@ -4,7 +4,6 @@ import Order from './Order'
 
 export default function OrderContainer() {
     const [orders, setOrders] = useState([])
-    const [selectedOrder, setSelectedOrder] = useState(null)
 
     useEffect(() => {
         fetch(BASE_URL + 'orders')
