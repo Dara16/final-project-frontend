@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: rgb(243, 137, 190);
+  background-color: rgb(224, 218, 221);
 
 }
 body {
@@ -25,6 +25,7 @@ h2 {
 h3 {
   font-size: 1rem;
 }
+
 a {
   text-decoration: none;
   align-content: space-between;
@@ -35,6 +36,7 @@ a {
 
 .row {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 
 }
@@ -44,13 +46,23 @@ a {
   display: flex;
   flex-direction: row;
   padding-left: 120px;
-  
+}
+
+.homepage{
+  background: url(https://images.unsplash.com/photo-1546541866-706231a598d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80) no-repeat center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+}
+
+
+.homepage p {
+  margin-top: 0px;
 }
 
 .card {
   padding-bottom: 40px;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 .col-2 {
@@ -66,12 +78,9 @@ a {
 
 .block {
   background-color: #e0e0e0;
-  padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
   min-height: 400px;
-  padding-top: 20px;
-  margin-top: 50px;
 }
 
 button {
